@@ -1,0 +1,18 @@
+:host {
+  height: 100vh;
+}
+
+mat-toolbar {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+}
+mat-sidenav {
+	width: 20vw;
+}
+mat-sidenav-container {
+	height: 100vh;
+}
+mat-icon {
+	cursor: pointer;
+}

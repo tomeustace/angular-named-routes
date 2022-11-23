@@ -1,0 +1,7 @@
+<ul *ngIf="shoppingList$ | async as items; else shoppingListEmpty;">
+	<li *ngFor="let item of items">{{ item }}</li>
+</ul>
+
+<ng-template #shoppingListEmpty>
+	Your shopping list is empty!
+</ng-template>

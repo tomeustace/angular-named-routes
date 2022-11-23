@@ -1,0 +1,6 @@
+<h2>Ingredients</h2>
+<div>
+ <ul *ngFor="let ingredient of ingredients">
+	<li (click)="addItem(ingredient)">{{ingredient}}</li>
+ </ul>
+</div>

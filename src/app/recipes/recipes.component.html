@@ -1,0 +1,12 @@
+<mat-card 
+	*ngFor="let recipe of recipes" 
+	class="is-focusable"
+	role="button" 
+	[routerLink]="['/recipe', recipe.name]"> 
+	<mat-card-content>
+		<mat-card-subtitle>
+			{{ recipe.name }}
+		</mat-card-subtitle>
+		{{ recipe.description }}
+	</mat-card-content>
+</mat-card>

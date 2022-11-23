@@ -1,0 +1,8 @@
+<mat-card>
+	<mat-card-title>{{ recipe?.name }}</mat-card-title>
+	<mat-card-content>
+		<p>{{ recipe?.description }}</p>
+		<app-ingredients [ingredients]="recipe?.ingredients"></app-ingredients>
+		<app-method [method]="recipe?.method"></app-method>
+	</mat-card-content>
+</mat-card>

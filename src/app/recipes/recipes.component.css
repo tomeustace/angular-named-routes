@@ -1,0 +1,12 @@
+mat-card {
+	max-width: 500px;
+	margin: 15px;
+}
+
+.is-focusable {
+  cursor: pointer;
+}
+
+.is-focusable:focus-visible {
+  outline: none;
+}
