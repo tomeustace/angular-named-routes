@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule, CustomUrlSerializer } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { IngredientsComponent } from './recipes/ingredients/ingredients.component';
-import { NotesComponent } from './recipes/notes/notes.component';
 import { MethodComponent } from './recipes/method/method.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutModule } from '@angular/cdk/layout';
@@ -19,6 +18,7 @@ import { RecipesComponent } from './recipes/recipes.component';
 import { RecipeContainerComponent } from './recipe-container/recipe-container.component';
 import { RecipeComponent } from './recipe/recipe.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
+import { UrlSerializer } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -26,7 +26,6 @@ import { ShoppingListComponent } from './shopping-list/shopping-list.component';
     RecipesComponent,
     RecipeComponent,
     IngredientsComponent,
-    NotesComponent,
     MethodComponent,
     RecipeContainerComponent,
     RecipeComponent,
@@ -45,7 +44,9 @@ import { ShoppingListComponent } from './shopping-list/shopping-list.component';
     MatCardModule,
     MatTooltipModule
   ],
-  providers: [],
+  providers: [
+    // { provide: UrlSerializer, useClass: CustomUrlSerializer }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

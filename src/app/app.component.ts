@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { RecipesService } from './recipes/recipes.service';
 @Component({
   selector: 'app-root',
@@ -14,7 +14,7 @@ export class AppComponent {
 
   @ViewChild('drawer') drawer: MatSidenav | undefined;
 
-  constructor(private router: Router, private recipeService: RecipesService) { }
+  constructor(private route: ActivatedRoute, private router: Router, private recipeService: RecipesService) { }
 
   activated(event: Event) {
     console.log('db: activated', event);
@@ -31,7 +31,11 @@ export class AppComponent {
   }
 
   deleteShoppingList() {
-    this.router.navigate([{ outlets: { 'list': null}}]);
+    // remove named route from URL
+    this.router.navigate(['.', { outlets: { shopping: null } }], {
+      relativeTo: this.route.parent
+    });
+
     this.recipeService.clearShoppingList();
     this.drawer?.close();
   }
